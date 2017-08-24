@@ -1,2 +1,2 @@
 # fmbaidu.github.io
-just a joke
+Just a joke
