@@ -28,10 +28,19 @@
 			var height = $(document).height();
 			var width  = $(document).width();
 			$('iframe').css({'width':width,'height':height});
-			function fadeTop(){
-					$(".pos").animate({"bottom":"0px"},1000);
+			function fadeUp(){
+				$(".pos").animate({"bottom":"0px"},1000);
 			}
-			setTimeout(fadeTop,5000)
+			function fadeDown(){
+				$(".pos").animate({"bottom":"-230px"},1000);
+			}
+			setTimeout(fadeUp,5000)
+			setTimeout(fadeDown,10000)
+			
+			$('.pos').mouseover(fadeUp)
+			$('.pos').mouseout(
+			 	setTimeout(fadeDown,5000)
+			)
 		})
 		// baidu tongji
 		var _hmt = _hmt || [];
