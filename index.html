@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
 <head>
@@ -9,8 +8,23 @@
 <meta name="360-site-verification" content="58d7b63310425840d6f0c1396f1f8924" />
 <style type="text/css">
 	*,iframe{width: 100%; height: 100%; padding: 0; margin: 0; overflow: hidden;}
-	.pos{display:none; position: fixed; right: 0; bottom: -260px; width: 250px; height: 250px;  background: rgba(255,255,255,0.2) url(https://videobydss.oss-cn-beijing.aliyuncs.com/ad/tmall250x250.jpg) no-repeat center center;}
+	.pos{position: fixed; right: 0; bottom: -260px; width: 250px; height: 250px;  background: rgba(255,255,255,0.2) url(https://videobydss.oss-cn-beijing.aliyuncs.com/ad/tmall250x250.jpg) no-repeat center center;}
 	.pos a{position: absolute; left:0; top:0; display:block;}
+	.myad-wrap{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.8);
+    }
+    .myad{
+	    position: fixed; left: 50%; margin-left: -400px; top: 100px; width: 800px; height: 450px;  background: rgba(255,255,255,0.2) url(https://img.caiqianhua.com/ad/tb800x450.jpg) no-repeat center center;
+    }
+    .myad-close{
+	    position: fixed; left: 50%; margin-left: 410px; top: 100px; width: 60px; height: 30px; line-height: 30px; font-size: 20px; color: #fff;
+    }
+	.myad a{position: absolute; left:0; top:0; display:block;}
 </style>
 </head>
 <body>
@@ -18,9 +32,11 @@
 
 	<iframe src="http://fm.baidu.com/" frameborder="0" style="position: fixed; left:0; top:0;"></iframe>
 
-	<div class="pos"><a href="https://s.click.taobao.com/t?e=m%3D2%26s%3DaeyqD%2BJe24McQipKwQzePCperVdZeJvipRe%2F8jaAHci5VBFTL4hn2cD2tgTUi7T%2F%2FKJpqXxEpU4OoMIeta%2B%2FNRbBelF27r%2F1YAMouo7uZZ%2FzVjhrLZ5zzuqFcNH5ieOrBmf7LSR66agQLxFAAKVhYzRVCPL3LSyAIYULNg46oBA%3D" target="_blank"></a></div>
-
-
+	<div class="pos" style="display: none;"><a href="https://s.click.taobao.com/d2vBFvu" target="_blank"></a></div>
+    <div class="myad-wrap">
+        <div class="myad"><a href="https://s.click.taobao.com/d2vBFvu" target="_blank"></a></div>
+        <div class="myad-close">关闭</div>
+    </div>
 
 	<script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script>
@@ -39,6 +55,10 @@
 			
 			$('.pos').mouseover(fadeUp)
 			$('.pos').mouseout(fadeDown)
+            // 关闭广告
+			$('.myad-close').on("click",function(){
+                $(".myad-wrap").fadeOut()
+            })
 		})
 		// baidu tongji
 		var _hmt = _hmt || [];
